@@ -1,17 +1,24 @@
-import {useState}  from "react";
+import { useState, useEffect } from "react";
 import ItemCount from "./ItemCount";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+import "./card.css"
+
 
 
 const CardProduct = () => {
     const [productos, setProductos] = useState([]);
-    
+    useEffect(() => {
+        cardFetch()
+    }, []);
+
+
     const cardFetch = async () => {
         try {
-            const response = await fetch('htps://api.mercadolibre.com/sites/MLA/search?q=ferrari');
+            const response = await fetch('https://api.mercadolibre.com/sites/MLA/search?q=ducati');
             const data = await response.json();
-            console.log(data);
+            console.log(data.results);
             setProductos(data.results);
         } catch (e) {
             console.log(e);
@@ -21,19 +28,22 @@ const CardProduct = () => {
         <div>
             {productos.map((productos) => {
                 return (
-                    <Card className="text-center">
-                        <Card.Header>{productos.tittle}</Card.Header>
+                    <Card className="text-center card" key={productos.id}>
+                        <Card.Header>{productos.title}</Card.Header>
                         <Card.Body>
-                            <Card.Title>{productos.image}</Card.Title>
+                            <img src={productos.thumbnail} alt="" />
                             <Card.Text>
                                 {productos.description}
                             </Card.Text>
                             <Card.Text>
                                 {productos.price}
                             </Card.Text>
+                            <Card.Text>
+                            <Button>Ver detalles</Button>
+                            </Card.Text>
                         </Card.Body>
-                        <Card.Footer className="text-muted">
-                            <ItemCount stock={productos.stock} />
+                        <Card.Footer>
+                            <ItemCount stock={productos.available_quantity} />
                         </Card.Footer>
                     </Card>
                 )

@@ -1,0 +1,15 @@
+
+/* CSS Card */
+.card{
+    width: 300px;
+}
+
+.card img{
+    width: 250;
+    height: 250px;
+}
+
+/* CSS ItemCount */
+.item-count{
+    width: 250px;;
+}
