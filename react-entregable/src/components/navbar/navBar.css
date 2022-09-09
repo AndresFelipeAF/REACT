@@ -1,7 +1,8 @@
-.nav-cart{
-    color:white;
+.nav-text{
     align-self: center;
+    padding: 10px;
 }
 .flex-nav{
     display: flex;
+    color:white;
 }

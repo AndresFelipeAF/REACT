@@ -4,6 +4,7 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 
 
+
 const ItemCount = ({ stock }) => {
 
     const [numeroCarrito, setNumero] = useState(1);
@@ -22,13 +23,13 @@ const ItemCount = ({ stock }) => {
                     setNumero(numeroCarrito + 1);
                 }}>+</button>
                 <div>
-                    <Button variant="primary" onClick={() => {
-                        if (numeroCarrito > stock) {
-                            alert("No hay suficientes productos en Stock")
-                        } else {
-                            alert("tu producto se a agregado al carrito");
-                        }
-                    }}>Agregar al carrito</Button>
+                        <Button variant="primary" onClick={() => {
+                            if (numeroCarrito > stock) {
+                                alert("No hay suficientes productos en Stock")
+                            } else {
+                                alert("tu producto se a agregado al carrito");
+                            }
+                        }}>Agregar al carrito</Button>
                 </div>
             </Card.Body>
         </Card>
