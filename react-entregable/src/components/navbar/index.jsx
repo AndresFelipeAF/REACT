@@ -11,13 +11,12 @@ function NavBar() {
         <>
             <Navbar bg="dark" variant="dark">
                 <Container>
-                    
+
                     <Navbar.Brand href="#home">Navbar</Navbar.Brand>
                     <Nav className="me-auto flex-nav">
-                        {/* no entiendo porque no me deja usar el nav para hacer el link  */}
-                        {/* <Link to={"/"}>
-                        <button >Home</button>
-                        </Link>     */}
+                        <Link to={"/"}>
+                            <Nav className="nav-text">Home</Nav>
+                        </Link>
                         <Nav className="nav-text">Features</Nav>
                         <Nav className="nav-text">Pricing</Nav>
                     </Nav>
