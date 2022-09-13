@@ -6,7 +6,7 @@ import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 
 
-const CardProduct = ({ title, description, price, stock, img,id }) => {
+const CardProduct = ({ title, description, price, stock, img, id }) => {
 
     return (
         <div>
@@ -15,10 +15,10 @@ const CardProduct = ({ title, description, price, stock, img,id }) => {
                 <Card.Body>
                     <img src={img} alt="" />
                     <Card.Text>
-                        <p>{description}</p>
+                        {description}
                     </Card.Text>
                     <Card.Text>
-                        <p> {price}</p>
+                        {price}
                     </Card.Text>
                     <Card.Text>
                         <Link to={`/detalle/${id}`}>
