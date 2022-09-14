@@ -1,11 +1,11 @@
 import React from "react";
 import Card from 'react-bootstrap/Card';
 import ItemCount from "./ItemCount";
-import { useState } from 'react';
+
 
 const ItemDetail = ({ productos }) => {
-    const OnAdd =()=>{
-        const [ quantityToAdd, setQuantity] = useState(1);
+    const OnAdd =(quantity)=>{
+        console.log(`Agregaste ${quantity} productos`)
     }
     return (
         <Card style={{ width: '18rem' }}>
@@ -18,7 +18,7 @@ const ItemDetail = ({ productos }) => {
                 <Card.Text>
                     {productos.price}
                 </Card.Text>
-                <ItemCount quantityToAdd={quantityToAdd} setQuantity={setQuantity}/>
+                <ItemCount OnAdd={OnAdd} stock={productos.available_quantity}/>
             </Card.Body>
         </Card>
     )

@@ -6,7 +6,7 @@ const ItemDetailContainer = () => {
     const [productos, setProductos] = useState([]);
     const { idProduct } = useParams();
     useEffect(() => {
-        const timer = setTimeout(() => {
+        setTimeout(() => {
             cardFetch()
         }, 1);
     }, []);

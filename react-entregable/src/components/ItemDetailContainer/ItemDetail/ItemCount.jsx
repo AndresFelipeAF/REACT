@@ -1,11 +1,11 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
+import { useState } from 'react';
 
 
-
-const ItemCount = ({ setQuantity,quantityToAdd,stock }) => {
-
+const ItemCount = ({ OnAdd, stock }) => {
+    const [ quantityToAdd, setQuantity] = useState(1);
 
     return (
         <Card className='item-count'>
@@ -20,6 +20,7 @@ const ItemCount = ({ setQuantity,quantityToAdd,stock }) => {
                 }}>+</button>
                 <div>
                         <Button variant="primary" onClick={() => {
+                            OnAdd(quantityToAdd)
                             if (quantityToAdd > stock) {
                                 alert("No hay suficientes productos en Stock")
                             } else {
