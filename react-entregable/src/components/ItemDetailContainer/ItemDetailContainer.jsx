@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = () => {
     const [productos, setProductos] = useState([]);
+    
     const { idProduct } = useParams();
     useEffect(() => {
         setTimeout(() => {
