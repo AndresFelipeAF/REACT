@@ -27,7 +27,7 @@ const ItemDetail = ({ productos }) => {
                     <Link to={"/"}>
                         {/* link to /cart */}
                         <button >Terminar la compra</button>
-                    </Link>) :( <ItemCount OnAdd={OnAdd}  productos={productos} stock={productos.available_quantity}  id={productos.id}/>)}
+                    </Link>) :( <ItemCount OnAdd={OnAdd}  productos={productos} stock={productos.available_quantity}  idProduct={productos.id}/>)}
             </Card.Body>
         </Card> )
 };

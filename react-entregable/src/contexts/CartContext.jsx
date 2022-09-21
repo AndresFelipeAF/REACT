@@ -4,8 +4,6 @@ const CartContext = React.createContext([]);
 
 export const useCartContext = () => useContext(CartContext);
 
-// para que se implementaria esta función ??
-
 const CartProvider = ({ children }) => {
 
     const [CartList, setCarList] = useState({});
