@@ -1,22 +1,21 @@
-import React, {useEffect, useState} from 'react';
-import { useCartContext } from '../../../contexts/CartContext';
+import {useEffect, useState} from 'react';
+import { useCartContext } from '../../contexts/CartContext';
 import CartItem from './CartItem';
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
 
 const Cart = () => {
     const { CartList, Clear, Total } = useCartContext();
-    const {precioTotal,setPrecioTotal} = useState(0);
+    const [precioTotal,setPrecioTotal] = useState(0);
 
     useEffect(()=>{
         setPrecioTotal(Total());
-    },[CartList]);
+    },[CartList,Total]);
 
     return (
         <>
-            {CartList.lenght > 0 ?
+            {CartList.length > 0 ?
                 (<>{CartList.map(item => <CartItem item={item} />)}
-                    <h1>EL precio total es {precioTotal}</h1>
+                    <h1> {precioTotal}</h1>
                     <button onClick={Clear}>Borrar todo carrito</button></>)
                 :
                 (<>

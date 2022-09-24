@@ -5,7 +5,8 @@ import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import  CartProvider from './contexts/CartContext';
-// import Cart from "./components/CartInf/Cart";
+import Cart from "./components/CartInf/Cart";
+
 // No me deja importarlo, no entiendo que problema tiene el path, si se manejan igual que los de arriba.
 
 function App() {
@@ -21,7 +22,7 @@ function App() {
                 <Route exact path="/" element={<ItemListContainer />} />
                 <Route exact path="/producto/:idProduct" element={<ItemListContainer />} />
                 <Route exact path="/detalle/:idProduct" element={<ItemDetailContainer />} />
-                {/* <Route exact path="/Cart" element={<Cart/>} /> */}
+                <Route exact path="/Cart" element={<Cart/>} />
               </Routes>
             </BrowserRouter>
           </CartProvider>
