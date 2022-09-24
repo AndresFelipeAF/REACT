@@ -1,15 +1,14 @@
 import { useState, useEffect } from "react";
 import ItemList from "./card/ItemList";
-import { useParams } from "react-router-dom";
 import "./card/card.css";
 
 const ItemListContainer = () => {
     const [productos, setProductos] = useState([]);
-    const { idProduct } = useParams();
     useEffect(() => {
         const timer = setTimeout(() => {
             cardFetch()
         }, 2000);
+        return () => clearTimeout(timer)
     }, []);
     const cardFetch = async () => {
         try {
@@ -26,4 +25,4 @@ const ItemListContainer = () => {
     )
 };
 
-export default ItemListContainer
+export default ItemListContainer;

@@ -21,7 +21,9 @@ function NavBar() {
                         <Nav className="nav-text">Pricing</Nav>
                     </Nav>
                     <div className="nav-cart">
-                        <a href=""><CartWidget className="cart" /></a>
+                        <Link to={"/Cart"}>
+                            <CartWidget className="cart" />
+                        </Link >
                     </div>
                 </Container>
             </Navbar>
