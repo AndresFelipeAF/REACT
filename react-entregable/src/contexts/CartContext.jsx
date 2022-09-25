@@ -9,7 +9,7 @@ const CartProvider = ({ children }) => {
     const [CartList, setCarList] = useState([]);
 
     const Clear = () => {
-        setCarList({});
+        setCarList([]);
     };
     // función eliminar todos los productos del carrito
 
