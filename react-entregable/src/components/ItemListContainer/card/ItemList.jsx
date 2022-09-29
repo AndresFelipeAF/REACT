@@ -11,8 +11,8 @@ const ItemList = ({productos}) => {
                         description={producto.description}
                         price={producto.price}
                         key={producto.id}
-                        stock={producto.available_quantity}
-                        img={producto.thumbnail} 
+                        stock={producto.stock}
+                        img={producto.image} 
                         id={producto.id}/>
                 );
             }

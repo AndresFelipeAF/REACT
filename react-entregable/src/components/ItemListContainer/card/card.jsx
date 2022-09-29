@@ -5,11 +5,11 @@ import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 
 
-const CardProduct = ({ title, description, price, stock, img, id }) => {
+const CardProduct = ({ title, description, price, stock, img, id, key}) => {
 
     return (
         <div>
-            <Card className="text-center card">
+            <Card  key ={key} className="text-center card">
                 <Card.Header>{title}</Card.Header>
                 <Card.Body>
                     <img src={img} alt="" />

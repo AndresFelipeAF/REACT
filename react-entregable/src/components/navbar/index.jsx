@@ -15,10 +15,17 @@ function NavBar() {
                     <Navbar.Brand href="#home">Navbar</Navbar.Brand>
                     <Nav className="me-auto flex-nav">
                         <Link to={"/"}>
-                            <Nav className="nav-text">Home</Nav>
+                            <Nav className="nav-text">Todos los productos</Nav>
                         </Link>
-                        <Nav className="nav-text">Features</Nav>
-                        <Nav className="nav-text">Pricing</Nav>
+                        <Link to={"/categoria/relojes"}>
+                            <Nav className="nav-text">Relojes</Nav>
+                        </Link>
+                        <Link to={"/categoria/tableta"}>
+                            <Nav className="nav-text">Tabletas</Nav>
+                        </Link>
+                        <Link to={"/categoria/celulares"}>
+                            <Nav className="nav-text">Celulares</Nav>
+                        </Link>
                     </Nav>
                     <div className="nav-cart">
                         <Link to={"/Cart"}>

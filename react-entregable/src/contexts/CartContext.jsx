@@ -35,8 +35,8 @@ const CartProvider = ({ children }) => {
         let tot= 0;
         CartList.forEach(item =>{
             tot= tot + item.price * item.quantity;
-            return tot;
         })
+        return tot;
     }
 
     const removeItem =(itemId)=>{

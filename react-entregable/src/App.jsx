@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './components/navbar';
 import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import ItemCategoryContainer from './components/ItemCategoryContainer/ItemCategoryComponent';
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import  CartProvider from './contexts/CartContext';
 import Cart from "./components/CartInf/Cart";
@@ -20,6 +21,7 @@ function App() {
               <NavBar/>
               <Routes>
                 <Route exact path="/" element={<ItemListContainer />} />
+                <Route exact path="/categoria/:category" element={<ItemCategoryContainer />} />
                 <Route exact path="/producto/:idProduct" element={<ItemListContainer />} />
                 <Route exact path="/detalle/:idProduct" element={<ItemDetailContainer />} />
                 <Route exact path="/Cart" element={<Cart/>} />

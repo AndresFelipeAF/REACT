@@ -8,14 +8,14 @@ const Cart = () => {
     const [precioTotal, setPrecioTotal] = useState(0);
 
     useEffect(() => {
-        setPrecioTotal(Total());
-    }, [CartList, Total]);
+        setPrecioTotal(Total);
+    }, [CartList,Total]);
 
     return (
         <>
             {CartList.length > 0 ?
-                (<>{CartList.map(item => <CartItem id={item.id} quantity={item.quantity} price={item.price} title={item.title} />)}
-                    <h1> {precioTotal}</h1>
+                (<>{CartList.map(item => <CartItem  key={item.id} id={item.id} quantity={item.stock} price={item.price} title={item.title} />)}
+                    <h1> El precio es {precioTotal}</h1>
                     <button onClick={Clear}>Borrar todo carrito</button></>)
                 :
                 (<>

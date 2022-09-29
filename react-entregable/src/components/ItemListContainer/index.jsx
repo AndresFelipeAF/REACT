@@ -1,25 +1,21 @@
 import { useState, useEffect } from "react";
 import ItemList from "./card/ItemList";
+import { collection, getDocs, getFirestore } from "firebase/firestore"
 import "./card/card.css";
 
 const ItemListContainer = () => {
     const [productos, setProductos] = useState([]);
     useEffect(() => {
-        const timer = setTimeout(() => {
-            cardFetch()
-        }, 2000);
-        return () => clearTimeout(timer)
+        const db = getFirestore();
+        const items = collection(db, "items");
+        getDocs(items).then((snapshot) => {
+            const docs = snapshot.docs.map(doc => ({
+                id:doc.id,
+                ...doc.data()
+            }));
+            setProductos(docs);
+        })
     }, []);
-    const cardFetch = async () => {
-        try {
-            const response = await fetch('https://api.mercadolibre.com/sites/MLA/search?q=ducati');
-            const data = await response.json();
-            console.log(data.results);
-            setProductos(data.results);
-        } catch (e) {
-            console.log(e);
-        }
-    }
     return (
         <ItemList productos={productos} />
     )
