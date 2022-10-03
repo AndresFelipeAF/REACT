@@ -10,7 +10,7 @@ const ItemCategoryContainer = () => {
     useEffect(() => {
         const db = getFirestore();
         const items = collection(db, "items");
-        const queryList =query(items, where("categoryID","==",category))
+        const queryList =query(items, where("categoryId","==",category))
         getDocs(queryList).then((snapshot) => {
             const docs = snapshot.docs.map(doc => ({
                 id:doc.id,

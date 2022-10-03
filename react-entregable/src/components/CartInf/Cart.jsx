@@ -14,9 +14,14 @@ const Cart = () => {
     return (
         <>
             {CartList.length > 0 ?
-                (<>{CartList.map(item => <CartItem  key={item.id} id={item.id} quantity={item.stock} price={item.price} title={item.title} />)}
+                (<>{CartList.map(item => <CartItem  key={item.id} id={item.id}  price={item.price} title={item.title} />)}
                     <h1> El precio es {precioTotal}</h1>
-                    <button onClick={Clear}>Borrar todo carrito</button></>)
+                    <button onClick={Clear}>Borrar todo carrito</button>
+                    <Link to={"/Order"}>
+                        <button>Terminar compra</button>
+                    </Link>
+                    </>
+                )
                 :
                 (<>
                     <h2>No hay productos en tu carro</h2>

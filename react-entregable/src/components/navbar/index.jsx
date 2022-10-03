@@ -20,7 +20,7 @@ function NavBar() {
                         <Link to={"/categoria/relojes"}>
                             <Nav className="nav-text">Relojes</Nav>
                         </Link>
-                        <Link to={"/categoria/tableta"}>
+                        <Link to={"/categoria/tabletas"}>
                             <Nav className="nav-text">Tabletas</Nav>
                         </Link>
                         <Link to={"/categoria/celulares"}>
