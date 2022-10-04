@@ -25,10 +25,13 @@ const ItemDetail = ({ productos }) => {
                 <Card.Text>
                     {productos.price}
                 </Card.Text>
-                {TerminarCompra ? (
+                {TerminarCompra ? (<>
+                    <Link to={"/"}>
+                    <button >Seguir comprando</button>
+                    </Link>
                     <Link to={"/Cart"}>
                         <button >Terminar la compra</button>
-                    </Link>) :( <ItemCount OnAdd={OnAdd}  productos={productos} stock={productos.stock}  idProduct={productos.id}/>)}
+                    </Link></>) :( <ItemCount OnAdd={OnAdd}  productos={productos} stock={productos.stock}  idProduct={productos.id}/>)}
             </Card.Body>
         </Card> )
 };
