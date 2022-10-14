@@ -22,7 +22,7 @@ const ItemCount = ({ OnAdd, stock }) => {
                         if (quantityToAdd > stock) {
                             alert("No hay suficientes productos en Stock")
                         } else {
-                            alert("tu producto se a agregado al carrito");
+                            alert("tu producto se ha agregado al carrito");
                         }
                     }}>Agregar al carrito</Button>
                 </div>

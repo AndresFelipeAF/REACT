@@ -3,7 +3,7 @@ import Card from 'react-bootstrap/Card';
 import ItemCount from "./ItemCount";
 import { Link } from 'react-router-dom';
 import { useCartContext } from '../../../contexts/CartContext';
-
+import Button from 'react-bootstrap/Button';
 
 const ItemDetail = ({ productos }) => {
     const [TerminarCompra, setTerminarCompra] = useState(false);
@@ -15,8 +15,10 @@ const ItemDetail = ({ productos }) => {
         addItem(productos,quantity);
     }
     return (
-        <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src={productos.image} />
+        <div style={{display:"flex", justifyContent:"center"}}>
+        <Card style={{ width:"250px", alignItems:"center",
+    margin:"50px"}}>
+            <Card.Img style={{margin:"5px"}} variant="top" src={productos.image} />
             <Card.Body>
                 <Card.Title>{productos.title}</Card.Title>
                 <Card.Text>
@@ -27,13 +29,14 @@ const ItemDetail = ({ productos }) => {
                 </Card.Text>
                 {TerminarCompra ? (<>
                     <Link to={"/"}>
-                    <button >Seguir comprando</button>
+                    <Button style={{marginBottom:"4px"}} >Seguir comprando</Button>
                     </Link>
                     <Link to={"/Cart"}>
-                        <button >Terminar la compra</button>
+                        <Button >Terminar la compra</Button>
                     </Link></>) :( <ItemCount OnAdd={OnAdd}  productos={productos} stock={productos.stock}  idProduct={productos.id}/>)}
             </Card.Body>
-        </Card> )
+        </Card>
+        </div> )
 };
 
 export default ItemDetail;

@@ -1,8 +1,21 @@
 .nav-text{
     align-self: center;
     padding: 10px;
+    color:white;
 }
 .flex-nav{
     display: flex;
-    color:white;
+    color: white;
+}
+.container{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+
+.text{
+    position: absolute;
+    bottom: 0%;
+    left: 70%;
 }

@@ -10,7 +10,7 @@ const ItemListContainer = () => {
         const items = collection(db, "items");
         getDocs(items).then((snapshot) => {
             const docs = snapshot.docs.map(doc => ({
-                id:doc.id,
+                id: doc.id,
                 ...doc.data()
             }));
             setProductos(docs);

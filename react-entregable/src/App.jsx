@@ -20,7 +20,7 @@ function App() {
             <CartProvider>
             <BrowserRouter>
               <NavBar/>
-              <Routes>
+              <Routes className="display">
                 <Route exact path="/" element={<ItemListContainer />} />
                 <Route exact path="/categoria/:category" element={<ItemCategoryContainer />} />
                 <Route exact path="/producto/:idProduct" element={<ItemListContainer />} />

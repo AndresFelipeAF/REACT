@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import ItemList from "../ItemListContainer/card/ItemList"
 import { useParams } from "react-router-dom";
 import { collection, getDocs, getFirestore, query, where } from "firebase/firestore"
-import "../ItemListContainer/card/card.css"
 
 const ItemCategoryContainer = () => {
     const [productos, setProductos] = useState([]);
@@ -20,7 +19,7 @@ const ItemCategoryContainer = () => {
         })
     }, [category]);
     return (
-        <ItemList productos={productos} />
+        <ItemList  productos={productos} />
     )
 };
 

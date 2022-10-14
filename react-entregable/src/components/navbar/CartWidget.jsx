@@ -8,9 +8,10 @@ const { CartList } = useCartContext();
 
 return <>
 
-{(CartList.length> 0) ? (<><h2>{CartList.length}</h2>
-<i className="ri-shopping-cart-line cart"></i></>):(
-<i className="ri-shopping-cart-line cart"></i>) }
+{(CartList.length> 0) ? (<> <div className="container">
+<i className="ri-shopping-cart-line cart"></i>
+<p className="text">{CartList.length}</p></div></>):( <div className="container">
+<i className="ri-shopping-cart-line cart"></i></div>) }
 
 </> 
 };
